@@ -2,7 +2,7 @@
 
 namespace Laravel\Passport;
 
-use Illuminate\Database\Eloquent\Model;
+use Eloquent as Model;
 
 class PersonalAccessClient extends Model
 {

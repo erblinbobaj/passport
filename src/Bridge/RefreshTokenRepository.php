@@ -77,8 +77,10 @@ class RefreshTokenRepository implements RefreshTokenRepositoryInterface
         $refreshToken = $this->database->table('oauth_refresh_tokens')
                     ->where('id', $tokenId)->first();
 
-        if(is_array($refreshToken)) { $refreshToken = (object) $refreshToken; }
-        
+        if(is_array($refreshToken)) {
+            $refreshToken = (object) $refreshToken;
+        }
+
         return $refreshToken === null || $refreshToken->revoked;
     }
 }
