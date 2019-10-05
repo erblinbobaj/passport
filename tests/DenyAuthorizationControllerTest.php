@@ -2,16 +2,16 @@
 
 namespace Laravel\Passport\Tests;
 
-use Mockery as m;
-use Illuminate\Http\Request;
-use PHPUnit\Framework\TestCase;
 use Illuminate\Contracts\Routing\ResponseFactory;
-use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
+use Illuminate\Http\Request;
 use Laravel\Passport\Http\Controllers\DenyAuthorizationController;
+use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
+use Mockery as m;
+use PHPUnit\Framework\TestCase;
 
 class DenyAuthorizationControllerTest extends TestCase
 {
-    public function tearDown()
+    protected function tearDown(): void
     {
         m::close();
     }

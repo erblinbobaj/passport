@@ -2,19 +2,19 @@
 
 namespace Laravel\Passport\Tests;
 
-use Mockery as m;
-use Lcobucci\JWT\Parser;
-use Laravel\Passport\Token;
-use PHPUnit\Framework\TestCase;
-use Laravel\Passport\TokenRepository;
 use Laravel\Passport\ClientRepository;
-use League\OAuth2\Server\AuthorizationServer;
-use Laravel\Passport\PersonalAccessTokenResult;
 use Laravel\Passport\PersonalAccessTokenFactory;
+use Laravel\Passport\PersonalAccessTokenResult;
+use Laravel\Passport\Token;
+use Laravel\Passport\TokenRepository;
+use Lcobucci\JWT\Parser;
+use League\OAuth2\Server\AuthorizationServer;
+use Mockery as m;
+use PHPUnit\Framework\TestCase;
 
 class PersonalAccessTokenFactoryTest extends TestCase
 {
-    public function tearDown()
+    protected function tearDown(): void
     {
         m::close();
     }

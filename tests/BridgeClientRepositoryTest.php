@@ -2,11 +2,11 @@
 
 namespace Laravel\Passport\Tests;
 
+use Laravel\Passport\Bridge\Client;
+use Laravel\Passport\Bridge\ClientRepository as BridgeClientRepository;
+use Laravel\Passport\ClientRepository;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\Bridge\Client;
-use Laravel\Passport\ClientRepository;
-use Laravel\Passport\Bridge\ClientRepository as BridgeClientRepository;
 
 class BridgeClientRepositoryTest extends TestCase
 {
@@ -20,7 +20,7 @@ class BridgeClientRepositoryTest extends TestCase
      */
     private $repository;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $clientModelRepository = m::mock(ClientRepository::class);
         $clientModelRepository->shouldReceive('findActive')
@@ -31,7 +31,7 @@ class BridgeClientRepositoryTest extends TestCase
         $this->repository = new BridgeClientRepository($clientModelRepository);
     }
 
-    public function tearDown()
+    protected function tearDown(): void
     {
         m::close();
 

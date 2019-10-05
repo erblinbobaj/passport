@@ -2,13 +2,13 @@
 
 namespace Laravel\Passport\Tests;
 
+use Laravel\Passport\Http\Middleware\CheckScopes;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
-use Laravel\Passport\Http\Middleware\CheckScopes;
 
 class CheckScopesTest extends TestCase
 {
-    public function tearDown()
+    protected function tearDown(): void
     {
         m::close();
     }
